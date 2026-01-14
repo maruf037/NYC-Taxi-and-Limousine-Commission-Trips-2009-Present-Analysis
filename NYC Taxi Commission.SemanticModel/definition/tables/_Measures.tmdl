@@ -1,0 +1,114 @@
+table _Measures
+	lineageTag: f9eca89a-ace7-4a3c-9355-449e294bbd20
+
+	measure 'Trip Count' = COUNTROWS('Fact_yellow_tripdata_2025-09')
+		formatString: 0
+		lineageTag: 064fa493-44b8-445e-899c-f7b39797b926
+
+	measure 'Total Revenue' = SUM('Fact_yellow_tripdata_2025-09'[total_amount])
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: c83e965a-f527-478e-a4d3-058216ce3819
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Avg Fare per Trip' = DIVIDE([Total Revenue], [Trip Count])
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: f0555dff-9fd6-4d7c-85bd-d59e1c399dec
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Avg Trip Distance' = AVERAGE('Fact_yellow_tripdata_2025-09'[trip_distance])
+		formatString: 0
+		lineageTag: 868b0fe4-4cdc-4a17-a827-67a768195cb9
+
+	measure 'Avg Trip Duration' = AVERAGE('Fact_yellow_tripdata_2025-09'[trip_duration_min])
+		formatString: 0
+		lineageTag: 52eca9d5-5852-477b-b0e2-a11f78f0ee6f
+
+	measure 'Trip Count by Pickup Hour' = ```
+			CALCULATE(
+			    [Trip Count], 
+			    ALLEXCEPT('Fact_yellow_tripdata_2025-09', 'Fact_yellow_tripdata_2025-09'[PickupHour])
+			)
+			```
+		formatString: 0
+		lineageTag: 1bc25fb0-4ef6-4057-b3ae-adcaf6cce076
+
+	measure 'Trips by Pickup Zone' = ```
+			
+			CALCULATE ( [Trip Count], USERELATIONSHIP ( 'DimLocation'[LocationID], 'Fact_yellow_tripdata_2025-09'[PULocationID] ) )
+			
+			```
+		formatString: 0
+		lineageTag: fd274488-0c72-43e3-b2e9-9c2fc2664038
+
+	measure 'Trips by Dropoff Zone' = ```
+			
+			CALCULATE ( [Trip Count], USERELATIONSHIP ( 'DimLocation'[LocationID], 'Fact_yellow_tripdata_2025-09'[DOLocationID] ) )
+			
+			```
+		formatString: 0
+		lineageTag: 7ce6654e-35ae-4818-aeb8-fc2aff81243f
+
+	measure 'Total Fare' = SUM ( 'Fact_yellow_tripdata_2025-09'[fare_amount] )
+		lineageTag: 81687db4-ef00-4eec-80d5-136753badd71
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Tips' = SUM ( 'Fact_yellow_tripdata_2025-09'[tip_amount] )
+		lineageTag: b14b4c38-5504-41cb-8be9-a93a210a838b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Tolls' = SUM ( 'Fact_yellow_tripdata_2025-09'[tolls_amount] )
+		lineageTag: 1484a226-1e41-44e6-96ec-6f00ef5ffbbc
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Congestion Surcharge' = SUM ( 'Fact_yellow_tripdata_2025-09'[congestion_surcharge] )
+		lineageTag: 5ba973c4-e059-4639-8851-358d2bff0d0b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total CBD Congestion Fee' = SUM ( 'Fact_yellow_tripdata_2025-09'[cbd_congestion_fee] )
+		lineageTag: 669d85e0-9ebd-4196-b1f2-f7a43d38b7a6
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Airport Fee' = SUM ( 'Fact_yellow_tripdata_2025-09'[airport_fee] )
+		lineageTag: 1a6a6cdf-4cad-4826-80b1-07a3844147aa
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Tip % of Fare' =
+			
+			DIVIDE ( [Total Tips], [Total Fare] )
+		lineageTag: 474d0315-5c20-4daa-b0dd-8a0603319a37
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Revenue per Mile' =
+			
+			DIVIDE ( [Total Revenue], SUM ( 'Fact_yellow_tripdata_2025-09'[trip_distance] ) )
+		lineageTag: 6def8f6f-47e2-40d6-aa59-f4926c6714e4
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Column
+		isHidden
+		formatString: 0
+		lineageTag: e3752621-8704-4b7a-b43e-5543971451c8
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _Measures = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = 1813d0b3eae84bfe81563c6d1b4735c4
+
+	annotation 436ba87b-9c83-4389-a31b-ebd06a36be98 = {"Expression":""}
+

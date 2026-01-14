@@ -1,0 +1,34 @@
+# ============================================
+# Power BI Project - Data Cache (SPECIFIC)
+# ============================================
+
+# Ignore ONLY the cache subfolder and .abf files
+**/.pbi/cache/
+**/.pbi/cache/**
+**/.pbi/*.abf
+*.abf
+
+# Keep settings files (they're small and useful)
+# These lines ensure settings are NOT ignored:
+!**/.pbi/localSettings.json
+!**/.pbi/editorSettings.json
+!**/.pbi/metadata.json
+
+# ============================================
+# Data Files
+# ============================================
+!Assets/*.csv
+!Assets/*.xlsx
+!*.csv
+!*.xlsx
+
+# Keep sample data
+!*sample*.csv
+
+# ============================================
+# Power BI Files
+# ============================================
+*.pbix
+
+# Keep templates
+!*Template.pbit

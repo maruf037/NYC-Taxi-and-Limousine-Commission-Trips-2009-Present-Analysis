@@ -1,0 +1,66 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "fbf22ea88e00aee62a37",
+  "position": {
+    "x": 505.02369668246445,
+    "y": 7.5829383886255917,
+    "z": 2,
+    "height": 351.84834123222748,
+    "width": 565.68720379146919,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimVendor"
+                    }
+                  },
+                  "Property": "VendorName"
+                }
+              },
+              "queryRef": "DimVendor.VendorName",
+              "nativeQueryRef": "VendorName"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimPaymentType"
+                    }
+                  },
+                  "Property": "Payment Method"
+                }
+              },
+              "queryRef": "DimPaymentType.Payment Method",
+              "nativeQueryRef": "Payment Method"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimLocation"
+                    }
+                  },
+                  "Property": "Zone"
+                }
+              },
+              "queryRef": "DimLocation.Zone",
+              "nativeQueryRef": "Zone"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

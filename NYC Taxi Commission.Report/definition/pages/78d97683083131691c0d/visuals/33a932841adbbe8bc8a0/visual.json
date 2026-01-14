@@ -1,0 +1,94 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "33a932841adbbe8bc8a0",
+  "position": {
+    "x": 386.72985781990519,
+    "y": 368.53080568720378,
+    "z": 3,
+    "height": 351.84834123222748,
+    "width": 480.75829383886253,
+    "tabOrder": 3
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_yellow_tripdata_2025-09"
+                    }
+                  },
+                  "Property": "fare_amount"
+                }
+              },
+              "queryRef": "Sum(Fact_yellow_tripdata_2025-09.fare_amount)",
+              "nativeQueryRef": "fare_amount"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_yellow_tripdata_2025-09"
+                    }
+                  },
+                  "Property": "tip_amount"
+                }
+              },
+              "queryRef": "Sum(Fact_yellow_tripdata_2025-09.tip_amount)",
+              "nativeQueryRef": "tip_amount"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_yellow_tripdata_2025-09"
+                    }
+                  },
+                  "Property": "tolls_amount"
+                }
+              },
+              "queryRef": "Sum(Fact_yellow_tripdata_2025-09.tolls_amount)",
+              "nativeQueryRef": "tolls_amount"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_yellow_tripdata_2025-09"
+                    }
+                  },
+                  "Property": "cbd_congestion_fee"
+                }
+              },
+              "queryRef": "Sum(Fact_yellow_tripdata_2025-09.cbd_congestion_fee)",
+              "nativeQueryRef": "cbd_congestion_fee"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_yellow_tripdata_2025-09"
+                    }
+                  },
+                  "Property": "Airport_fee"
+                }
+              },
+              "queryRef": "Sum(Fact_yellow_tripdata_2025-09.Airport_fee)",
+              "nativeQueryRef": "Airport_fee"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

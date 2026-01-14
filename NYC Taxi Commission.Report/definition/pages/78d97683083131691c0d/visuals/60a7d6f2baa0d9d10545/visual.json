@@ -1,0 +1,237 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "60a7d6f2baa0d9d10545",
+  "position": {
+    "x": 10.616113744075829,
+    "y": 0,
+    "z": 0,
+    "height": 359.43127962085305,
+    "width": 476.20853080568719
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_yellow_tripdata_2025-09"
+                    }
+                  },
+                  "Property": "TripID"
+                }
+              },
+              "queryRef": "CountNonNull(Fact_yellow_tripdata_2025-09.TripID)",
+              "nativeQueryRef": "TripID"
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Fact_yellow_tripdata_2025-09"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "tpep_pickup_datetime"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
+                    }
+                  },
+                  "Level": "Year"
+                }
+              },
+              "queryRef": "Fact_yellow_tripdata_2025-09.tpep_pickup_datetime.Variation.Date Hierarchy.Year",
+              "nativeQueryRef": "tpep_pickup_datetime Year"
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Fact_yellow_tripdata_2025-09"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "tpep_pickup_datetime"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
+                    }
+                  },
+                  "Level": "Quarter"
+                }
+              },
+              "queryRef": "Fact_yellow_tripdata_2025-09.tpep_pickup_datetime.Variation.Date Hierarchy.Quarter",
+              "nativeQueryRef": "tpep_pickup_datetime Quarter"
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Fact_yellow_tripdata_2025-09"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "tpep_pickup_datetime"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
+                    }
+                  },
+                  "Level": "Month"
+                }
+              },
+              "queryRef": "Fact_yellow_tripdata_2025-09.tpep_pickup_datetime.Variation.Date Hierarchy.Month",
+              "nativeQueryRef": "tpep_pickup_datetime Month"
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Fact_yellow_tripdata_2025-09"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "tpep_pickup_datetime"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
+                    }
+                  },
+                  "Level": "Day"
+                }
+              },
+              "queryRef": "Fact_yellow_tripdata_2025-09.tpep_pickup_datetime.Variation.Date Hierarchy.Day",
+              "nativeQueryRef": "tpep_pickup_datetime Day"
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Fact_yellow_tripdata_2025-09"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "tpep_dropoff_datetime"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
+                    }
+                  },
+                  "Level": "Year"
+                }
+              },
+              "queryRef": "Fact_yellow_tripdata_2025-09.tpep_dropoff_datetime.Variation.Date Hierarchy.Year",
+              "nativeQueryRef": "tpep_dropoff_datetime Year"
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Fact_yellow_tripdata_2025-09"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "tpep_dropoff_datetime"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
+                    }
+                  },
+                  "Level": "Quarter"
+                }
+              },
+              "queryRef": "Fact_yellow_tripdata_2025-09.tpep_dropoff_datetime.Variation.Date Hierarchy.Quarter",
+              "nativeQueryRef": "tpep_dropoff_datetime Quarter"
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Fact_yellow_tripdata_2025-09"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "tpep_dropoff_datetime"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
+                    }
+                  },
+                  "Level": "Month"
+                }
+              },
+              "queryRef": "Fact_yellow_tripdata_2025-09.tpep_dropoff_datetime.Variation.Date Hierarchy.Month",
+              "nativeQueryRef": "tpep_dropoff_datetime Month"
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Fact_yellow_tripdata_2025-09"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "tpep_dropoff_datetime"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
+                    }
+                  },
+                  "Level": "Day"
+                }
+              },
+              "queryRef": "Fact_yellow_tripdata_2025-09.tpep_dropoff_datetime.Variation.Date Hierarchy.Day",
+              "nativeQueryRef": "tpep_dropoff_datetime Day"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

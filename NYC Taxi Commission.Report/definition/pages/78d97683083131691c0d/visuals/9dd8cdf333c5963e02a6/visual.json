@@ -1,0 +1,66 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "9dd8cdf333c5963e02a6",
+  "position": {
+    "x": 10.616113744075829,
+    "y": 368.53080568720378,
+    "z": 1,
+    "height": 351.84834123222748,
+    "width": 324.54976303317534,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_yellow_tripdata_2025-09"
+                    }
+                  },
+                  "Property": "trip_distance"
+                }
+              },
+              "queryRef": "Sum(Fact_yellow_tripdata_2025-09.trip_distance)",
+              "nativeQueryRef": "trip_distance"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_yellow_tripdata_2025-09"
+                    }
+                  },
+                  "Property": "trip_duration_min"
+                }
+              },
+              "queryRef": "Sum(Fact_yellow_tripdata_2025-09.trip_duration_min)",
+              "nativeQueryRef": "trip_duration_min"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_yellow_tripdata_2025-09"
+                    }
+                  },
+                  "Property": "avg_speed_mph"
+                }
+              },
+              "queryRef": "Sum(Fact_yellow_tripdata_2025-09.avg_speed_mph)",
+              "nativeQueryRef": "avg_speed_mph"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
